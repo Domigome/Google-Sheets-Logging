@@ -39,7 +39,7 @@
 
 5. Delete all of the default text in the script editor, and paste the GoogleScripts-example.gs code.
 
-6. Update the Spreadsheet ID (line 12) with the ID obtained in step 3, and click `Save`.
+6. Update the Spreadsheet ID (line 9) with the ID obtained in step 3, and click `Save`.
 
    *Note:  The Spreadsheet ID must be contained in single quotation marks as shown in the example code, and **the script must be saved before continuing** to the next step.*
    
@@ -64,7 +64,18 @@
    *Note:  Nothing will happen when you click run but you must do that once before continuing.*
  
 
+## Testing from your computer (ex. using Postman www.postman.com)
 
+1. Create a new 'Collection' Select 'POST' and enter the webapp URL obtained in step 7 when deployed.
+2. Below click on tab 'Body' (instead of the default tab postman uses, which is the tab 'params'). Then choose type 'Raw' and int he dropdown 'JSON'.
+3. Paste following JSON test code:
+''{
+  "command": "insert_row",
+  "sheet_name": "Sheet1",
+  "values": "1,2,3"
+}''
+4. Click 'SEND'
+5. Should return 'Success' and the Sheet will be updated. 
    
 
 ## Instructions for ESP8266
